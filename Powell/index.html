@@ -1,0 +1,351 @@
+<html>
+
+<head>
+    <title>
+        JS Game
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="squareObject.js"></script>
+    <script>
+
+var seconds;
+
+var myRedColors = [];
+var myGreenColors = [];
+var myBlueColors = [];
+
+function setup() {
+  createCanvas(400, 400);
+  
+for (var i = 0; i < 3; i++) {
+  myRedColors[i] = getRandomNumber(255);
+    myGreenColors[i] = getRandomNumber(255);
+    myBlueColors[i] = getRandomNumber(255);
+}
+
+  seconds = second();
+}
+
+function draw() {
+  
+  if(second() - seconds  >= 10){
+    setup();
+  } 
+    
+  if (second() - seconds >= 0 || second() - seconds < 2 ) {
+    frameOne();
+  }
+
+  if (second() - seconds >= 2) {
+    frameTwo();
+  }
+  if (second() - seconds >= 4) {
+    frameThree();
+  }
+  
+  if(second() - seconds >= 6) {
+    frameFour();
+  }
+  
+  if(second() - seconds >= 8) {
+    frameFive();
+  }
+  
+}
+
+function frameOne(){
+  background(200);
+    noStroke();
+  
+  //body//
+  fill(myRedColors,myBlueColors,myGreenColors);
+  ellipse(200,350,200,350);
+  triangle(75,400,200,190,325,400);
+  ellipse(200,220,175,200);
+  rect(116,220,168,100);
+  
+  //ears//
+  triangle(90,190,100,140,160,140);
+  triangle(310,190,300,140,240,140);
+  
+  //nose//
+  fill(0);
+  ellipse(200,290,50,20);
+  triangle(200,310,190,290,210,290);
+  
+  //mouth//
+  stroke(38,26,13);
+  strokeWeight(5);
+  line(185,311,215,311);
+  line(185,311,183,310.7);
+  line(215,311,217,310.7);
+  
+  //eyebrows//
+  stroke(217,179,140);
+  strokeWeight(7);
+  line(150,180,180,175);
+  line(220,175,250,180);
+  
+  noStroke();
+  
+  //eyes//
+  fill(255);
+  ellipse(170,210,30,20);
+  ellipse(230,210,30,20);
+  fill(0);
+  circle(170,210,15);
+  circle(230,210,15);
+  fill(myRedColors,myBlueColors,myGreenColors);
+  rect(155,190,30,15);
+  rect(215,190,30,15);
+}
+
+function frameTwo(){
+  background(200);
+    noStroke();
+  
+  //body//
+  fill(myRedColors,myBlueColors,myGreenColors);
+  ellipse(205,350,200,350);
+  triangle(100,400,200,190,325,400);
+  ellipse(200,220,175,200);
+  rect(116,220,168,100);
+  
+  //ears//
+  triangle(95,180,105,130,165,130);
+  triangle(295,185,295,130,235,130);
+  
+  //nose//
+  fill(0);
+  ellipse(160,220,40,20);
+  triangle(160,240,150,220,170,220);
+  
+  //mouth//
+  stroke(38,26,13);
+  strokeWeight(5);
+  line(150,241,170,241);
+  
+  
+  //eyebrows//
+  stroke(217,179,140);
+  strokeWeight(7);
+  line(142,139,160,139);
+  line(210,140,226,141);
+  
+  noStroke();
+  
+  //eyes//
+  fill(255);
+  ellipse(155,170,27,20);
+  ellipse(210,171,27,20);
+  fill(0);
+  circle(154,168,10);
+  circle(209,169,10);
+  fill(myRedColors,myBlueColors,myGreenColors);
+  //rect(155,187,30,15);//
+ // rect(220,187,30,15);//
+}
+
+function frameThree(){
+  background(200);
+  noStroke();
+
+  //body//
+  fill(myRedColors,myBlueColors,myGreenColors);
+  ellipse(205, 350, 195, 315);
+  triangle(110, 400, 200, 195, 300, 400);
+  ellipse(205, 205, 160, 215);
+  rect(127, 220, 154, 300);
+
+  //ears//
+  triangle(100, 80, 130, 170, 170, 120);
+  triangle(295, 80, 275, 170, 220, 120);
+
+  //mouth//
+
+  //side and lower lips//
+  noStroke(0);
+  fill(38, 26, 13);
+  strokeWeight(5);
+  ellipse(200, 280, 50, 20);
+  triangle(179, 280, 155, 205, 227, 210);
+  triangle(221, 280, 245, 205, 173, 210);
+
+  //pink part//
+  fill(115, 38, 77);
+  stroke(115, 38, 77);
+  strokeWeight(20);
+  ellipse(200, 225, 40, 60);
+  line(190, 270, 210, 270);
+
+  
+
+  //teeth//
+  strokeWeight(6);
+  stroke(255);
+  line(185, 250, 180, 220);
+  line(215, 250, 220, 220);
+
+  stroke(255);
+  line(195, 280, 205, 280);
+  line(191, 280, 188, 278);
+  line(209, 280, 212, 278);
+  
+ //tongue//
+  
+  noStroke();
+  fill(255, 190, 190);
+  ellipse(200, 220, 26, 75);
+  
+
+  //upper lip//
+  fill(38, 26, 13);
+  
+  //strokeWeight(5);
+  //line(150,241,170,241);
+  ellipse(200, 205, 100, 15);
+
+  //eyebrows//
+  stroke(217, 179, 140);
+  strokeWeight(7);
+  line(160,115,175,110);
+  line(230,110,245,115);
+
+  noStroke();
+
+  //eyes//
+  fill(255);
+  ellipse(170, 145, 27, 30);
+  ellipse(232, 140, 27, 30);
+  fill(0);
+  circle(172, 146.5, 14);
+  circle(226, 147, 14);
+  fill(myRedColors,myBlueColors,myGreenColors);
+  rect(155, 145, 30, 15); //
+  rect(215, 145, 30, 19); //
+
+  //nose//
+  fill(0);
+  ellipse(200, 180, 80, 40);
+  triangle(200, 205, 161, 185, 239, 185);
+  
+  //ball//
+  
+  fill(255,0,0);
+  circle(179,290,60);
+}
+
+function frameFour(){
+ background(200);
+  noStroke();
+  
+  //body//
+  fill(myRedColors,myBlueColors,myGreenColors);
+  ellipse(200,350,200,350);
+  triangle(75,400,200,190,325,400);
+  ellipse(200,220,175,200);
+  rect(116,220,168,100);
+  
+  //ears//
+  triangle(90,200,100,140,160,140);
+  triangle(310,200,300,140,240,140);
+  
+  //nose//
+  fill(0);
+  ellipse(200,270,45,25);
+  triangle(200,290,190,270,210,270);
+  
+  //mouth//
+  stroke(0);
+  strokeWeight(5);
+  ellipse(200,290,50,1)
+  line(175,290,170,280);
+  line(225,290,230,280);
+  
+  
+  
+  noStroke();
+  
+  //eyes//
+  fill(255);
+  ellipse(170,210,30,20);
+  ellipse(230,210,30,20);
+  fill(0);
+  circle(170,210,13);
+  circle(230,210,13);
+  fill(myRedColors,myBlueColors,myGreenColors);
+  rect(155,190,30,15);
+  rect(215,190,30,15);
+  
+  //eyebrows//
+  stroke(217,179,140);
+  strokeWeight(7);
+  line(150,195,180,193);
+  line(220,193,250,195);
+  
+  //ball//
+  noStroke();
+  fill(255,0,0);
+  arc(200, 294, 50, 50, 0,3.15,1);
+}
+
+function frameFive(){
+  background(220);
+  noStroke();
+  
+  //body//
+  fill(myRedColors,myBlueColors,myGreenColors);
+  ellipse(200,400,170,240);
+  triangle(95,400,200,300,305,400);
+  ellipse(200,400,190,200);
+  //rect(116,220,168,100);
+  
+  //ears//
+  triangle(110,350,120,300,170,300);
+  triangle(290,350,280,300,230,300);
+  
+  //nose//
+  fill(0);
+  //ellipse(200,270,45,25);
+  //triangle(200,290,190,270,210,270);
+  
+  //mouth//
+  stroke(0);
+  strokeWeight(5);
+  //ellipse(200,290,50,1)
+  //line(175,290,170,280);
+ // line(225,290,230,280);
+  
+  
+  
+  noStroke();
+  
+  //eyes//
+  fill(255);
+  ellipse(170,390,30,20);
+  ellipse(230,390,30,20);
+  fill(0);
+  circle(170,398,13);
+  circle(230,398,13);
+  fill(myRedColors,myBlueColors,myGreenColors);
+  rect(155,370,30,15);
+  rect(215,370,30,15);
+  
+  //eyebrows//
+  stroke(217,179,140);
+  strokeWeight(7);
+  line(150,375,180,374);
+  line(220,374,250,375);
+  
+}
+
+function getRandomNumber(number) {
+  return Math.floor(Math.random() * number) + 15;
+}
+
+
+    </script>
+
+</head>
+
+</html>
